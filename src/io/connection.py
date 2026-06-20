@@ -3,7 +3,11 @@ from pathlib import Path
 
 import pandas as pd
 
-from chapters.chap3.futures import Asset, Commodity, Future, Stock, Timeserie
+from core.assets.base import Asset
+from core.assets.commodities import Commodity
+from core.assets.derivatives.futures import Future
+from core.assets.stocks import Stock
+from core.timeseries import Timeserie
 
 DATABASE_DIR = Path(__file__).parent.parent.parent / "Database"
 
