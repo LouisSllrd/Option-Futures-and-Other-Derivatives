@@ -1,0 +1,82 @@
+{
+  "CL_AUG26": {
+    "name": "CL_AUG26",
+    "underlying_name": "Crude Oil",
+    "underlying_type": "commodity",
+    "contract_price": 103.23,
+    "maturity": "2026-08-15",
+    "contract_size": 1000
+  },
+  "BZ_SEP26": {
+    "name": "BZ_SEP26",
+    "underlying_name": "Brent Oil",
+    "underlying_type": "commodity",
+    "contract_price": 60.51,
+    "maturity": "2026-09-15",
+    "contract_size": 1000
+  },
+  "NG_JUL26": {
+    "name": "NG_JUL26",
+    "underlying_name": "Natural Gas",
+    "underlying_type": "commodity",
+    "contract_price": 1.07,
+    "maturity": "2026-07-15",
+    "contract_size": 10000
+  },
+  "GC_OCT26": {
+    "name": "GC_OCT26",
+    "underlying_name": "Gold",
+    "underlying_type": "commodity",
+    "contract_price": 2211.21,
+    "maturity": "2026-10-15",
+    "contract_size": 100
+  },
+  "SI_DEC26": {
+    "name": "SI_DEC26",
+    "underlying_name": "Silver",
+    "underlying_type": "commodity",
+    "contract_price": 30.8,
+    "maturity": "2026-12-15",
+    "contract_size": 5000
+  },
+  "HG_NOV26": {
+    "name": "HG_NOV26",
+    "underlying_name": "Copper",
+    "underlying_type": "commodity",
+    "contract_price": 4.13,
+    "maturity": "2026-11-15",
+    "contract_size": 25000
+  },
+  "ZC_SEP26": {
+    "name": "ZC_SEP26",
+    "underlying_name": "Corn",
+    "underlying_type": "commodity",
+    "contract_price": 5.98,
+    "maturity": "2026-09-15",
+    "contract_size": 5000
+  },
+  "AAPL_SEP26": {
+    "name": "AAPL_SEP26",
+    "underlying_name": "AAPL",
+    "underlying_type": "stock",
+    "contract_price": 124.48,
+    "maturity": "2026-09-18",
+    "contract_size": 100
+  },
+  "TSLA_DEC26": {
+    "name": "TSLA_DEC26",
+    "underlying_name": "TSLA",
+    "underlying_type": "stock",
+    "contract_price": 355.77,
+    "maturity": "2026-12-18",
+    "contract_size": 100
+  },
+  "NVDA_JUN27": {
+    "name": "NVDA_JUN27",
+    "underlying_name": "NVDA",
+    "underlying_type": "stock",
+    "contract_price": 1016.49,
+    "maturity": "2027-06-18",
+    "contract_size": 100
+  }
+}
