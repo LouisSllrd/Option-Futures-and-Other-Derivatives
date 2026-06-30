@@ -78,6 +78,7 @@ class DatabaseConnection:
         raw = self._futures_raw[name]
         underlying = self.get_asset(raw["underlying_name"], raw["underlying_type"])
         return Future(
+            name=raw["name"],
             underlying=underlying,
             contract_price=raw["contract_price"],
             maturity=pd.Timestamp(raw["maturity"]),
@@ -94,3 +95,31 @@ class DatabaseConnection:
 
     def list_futures(self) -> list[str]:
         return list(self._futures_raw.keys())
+
+    # -- Hedging support ---------------------------------------------------
+
+    def find_future_for_underlying(
+        self, asset: Asset, as_of: pd.Timestamp | None = None
+    ) -> Future | None:
+        """
+        Resolves the best futures contract whose underlying matches `asset`
+        exactly, following Hull's "choose the nearest delivery month later
+        than the hedge expiration" rule of thumb (section 3.2): among all
+        matching futures, pick the one with the soonest maturity that is
+        still in the future relative to `as_of` (defaults to no maturity
+        filtering if `as_of` is omitted).
+
+        Returns None if no future in the database has this exact underlying
+        (in which case the caller should fall back to cross-hedging).
+        """
+        candidates = []
+        for name in self._futures_raw:
+            future = self.get_future(name)
+            if future.matches(asset):
+                if as_of is None or future.maturity >= as_of:
+                    candidates.append(future)
+
+        if not candidates:
+            return None
+
+        return min(candidates, key=lambda f: f.maturity)
